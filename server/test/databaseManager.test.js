@@ -4,6 +4,22 @@ import dotenv from 'dotenv';
 import { describe, beforeAll, afterAll, test, expect } from 'vitest';
 import dbManager from '../db/index.js';
 
+/**
+ * Vitest test script for the Playlister app's Mongo Database Manager. Testing should verify that the Mongo Database Manager 
+ * will perform all necessarily operations properly.
+ *  
+ * Scenarios we will test:
+ *  1) Reading a User from the database
+ *  2) Creating a User in the database
+ *  3) ...
+ * 
+ * You should add at least one test for each database interaction. In the real world of course we would do many varied
+ * tests for each interaction.
+ */
+
+/**
+ * Executed once before all tests are performed.
+ */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

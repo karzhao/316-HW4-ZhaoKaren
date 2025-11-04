@@ -5,6 +5,7 @@ class PostgreDatabaseManager extends DatabaseManager {
     async initialize() {
         await sequelize.authenticate();
         await sequelize.sync();
+        return sequelize;
     }
 
     async close() {

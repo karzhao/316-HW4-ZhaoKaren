@@ -18,6 +18,18 @@
             "playlists": [
                 "68f526c4ec1ea2ad00a6fae8"
             ]
+        },
+        {
+            "firstName": "Karen",
+            "lastName": "Zhao",
+            "email": "karen@gmail.com",
+            "passwordHash": "$2a$10$dPEwsAVi1ojv2RfxxTpZjuKSAbep7zEKb5myegm.ATbQ4sJk4agGu",
+            "playlists": [
+                "651f0d8d43b7f5e6d4280001",
+                "651f0d8d43b7f5e6d4280002",
+                "651f0d8d43b7f5e6d4280003"
+            ]
+
         }
     ],
     "playlists": [
@@ -207,6 +219,387 @@
                     "artist": "The Clash",
                     "year": 1979,
                     "youTubeId": "uEK9oK02D1M"
+                }
+            ]
+        },
+        {
+            "_id": "651f0d8d43b7f5e6d4280001",
+            "ownerEmail": "karen@gmail.com",
+            "name": "Old Songs",
+            "songs": [
+                {
+                    "title": "What a Wonderful World",
+                    "artist": "Louis Armstrong",
+                    "year": 1967,
+                    "youTubeId": "CWzrABouyeE"
+                },
+                {
+                    "title": "Johnny B. Goode",
+                    "artist": "Chuck Berry",
+                    "year": 1958,
+                    "youTubeId": "ZFo8-JqzSCM"
+                },
+                {
+                    "title": "Stand By Me",
+                    "artist": "Ben E. King",
+                    "year": 1961,
+                    "youTubeId": "hwZNL7QVJjE"
+                },
+                {
+                    "title": "I Want You Back",
+                    "artist": "The Jackson 5",
+                    "year": 1969,
+                    "youTubeId": "s3Q80mk7bxE"
+                },
+                {
+                    "title": "Ain't No Mountain High Enough",
+                    "artist": "Marvin Gaye & Tammi Terrell",
+                    "year": 1967,
+                    "youTubeId": "IC5PL0XImjw"
+                },
+                {
+                    "title": "Respect",
+                    "artist": "Aretha Franklin",
+                    "year": 1967,
+                    "youTubeId": "6FOUqQt3Kg0"
+                },
+                {
+                    "title": "Hotel California",
+                    "artist": "Eagles",
+                    "year": 1976,
+                    "youTubeId": "EqPtz5qN7HM"
+                },
+                {
+                    "title": "Bohemian Rhapsody",
+                    "artist": "Queen",
+                    "year": 1975,
+                    "youTubeId": "fJ9rUzIMcZQ"
+                },
+                {
+                    "title": "Superstition",
+                    "artist": "Stevie Wonder",
+                    "year": 1972,
+                    "youTubeId": "0CFuCYNx-1g"
+                },
+                {
+                    "title": "Imagine",
+                    "artist": "John Lennon",
+                    "year": 1971,
+                    "youTubeId": "YkgkThdzX-8"
+                },
+                {
+                    "title": "Dancing Queen",
+                    "artist": "ABBA",
+                    "year": 1976,
+                    "youTubeId": "xFrGuyw1V8s"
+                },
+                {
+                    "title": "Billie Jean",
+                    "artist": "Michael Jackson",
+                    "year": 1982,
+                    "youTubeId": "Zi_XLOBDo_Y"
+                },
+                {
+                    "title": "Sweet Child O' Mine",
+                    "artist": "Guns N' Roses",
+                    "year": 1987,
+                    "youTubeId": "1w7OgIMMRc4"
+                },
+                {
+                    "title": "Smells Like Teen Spirit",
+                    "artist": "Nirvana",
+                    "year": 1991,
+                    "youTubeId": "hTWKbfoikeg"
+                },
+                {
+                    "title": "Wonderwall",
+                    "artist": "Oasis",
+                    "year": 1995,
+                    "youTubeId": "bx1Bh8ZvH84"
+                },
+                {
+                    "title": "No Scrubs",
+                    "artist": "TLC",
+                    "year": 1999,
+                    "youTubeId": "FrLequ6dUdM"
+                },
+                {
+                    "title": "Hey Ya!",
+                    "artist": "OutKast",
+                    "year": 2003,
+                    "youTubeId": "PWgvGjAhvIw"
+                },
+                {
+                    "title": "Mr. Brightside",
+                    "artist": "The Killers",
+                    "year": 2003,
+                    "youTubeId": "gGdGFtwCNBE"
+                },
+                {
+                    "title": "Rolling in the Deep",
+                    "artist": "Adele",
+                    "year": 2010,
+                    "youTubeId": "rYEDA3JcQqw"
+                },
+                {
+                    "title": "Hallelujah",
+                    "artist": "Jeff Buckley",
+                    "year": 1994,
+                    "youTubeId": "y8AWFf7EAc4"
+                }
+            ]
+        },
+        {
+            "_id": "651f0d8d43b7f5e6d4280002",
+            "ownerEmail": "karen@gmail.com",
+            "name": "Favorite Songs",
+            "songs": [
+                {
+                    "title": "Opalite",
+                    "artist": "Taylor Swift",
+                    "year": 2025,
+                    "youTubeId": "4FUIEcnvT04"
+                },
+                {
+                    "title": "The Fate of Ophelia",
+                    "artist": "Taylor Swift",
+                    "year": 2025,
+                    "youTubeId": "ko70cExuzZM"
+                },
+                {
+                    "title": "All Too Well (10 Minute Version)",
+                    "artist": "Taylor Swift",
+                    "year": 2021,
+                    "youTubeId": "tollGa3S0o8"
+                },
+                {
+                    "title": "Midnight City",
+                    "artist": "M83",
+                    "year": 2011,
+                    "youTubeId": "dX3k_QDnzHE"
+                },
+                {
+                    "title": "Runaway",
+                    "artist": "Kanye West ft. Pusha T",
+                    "year": 2010,
+                    "youTubeId": "Bm5iA4Zupek"
+                },
+                {
+                    "title": "Bad Guy",
+                    "artist": "Billie Eilish",
+                    "year": 2019,
+                    "youTubeId": "DyDfgMOUjCI"
+                },
+                {
+                    "title": "Blinding Lights",
+                    "artist": "The Weeknd",
+                    "year": 2019,
+                    "youTubeId": "4NRXx6U8ABQ"
+                },
+                {
+                    "title": "Viva La Vida",
+                    "artist": "Coldplay",
+                    "year": 2008,
+                    "youTubeId": "dvgZkm1xWPE"
+                },
+                {
+                    "title": "Get Lucky",
+                    "artist": "Daft Punk ft. Pharrell Williams",
+                    "year": 2013,
+                    "youTubeId": "5NV6Rdv1a3I"
+                },
+                {
+                    "title": "Dog Days Are Over",
+                    "artist": "Florence + The Machine",
+                    "year": 2008,
+                    "youTubeId": "iWOyfLBYtuU"
+                },
+                {
+                    "title": "Lose Yourself",
+                    "artist": "Eminem",
+                    "year": 2002,
+                    "youTubeId": "xFYQQPAWfY8"
+                },
+                {
+                    "title": "Yellow",
+                    "artist": "Coldplay",
+                    "year": 2000,
+                    "youTubeId": "yKNxeF4KMsY"
+                },
+                {
+                    "title": "Fix You",
+                    "artist": "Coldplay",
+                    "year": 2005,
+                    "youTubeId": "k4V3Mo61fJM"
+                },
+                {
+                    "title": "Take Me Out",
+                    "artist": "Franz Ferdinand",
+                    "year": 2004,
+                    "youTubeId": "GhCXAiNz9Jo"
+                },
+                {
+                    "title": "Seven Nation Army",
+                    "artist": "The White Stripes",
+                    "year": 2003,
+                    "youTubeId": "0J2QdDbelmY"
+                },
+                {
+                    "title": "Mr. Brightside",
+                    "artist": "The Killers",
+                    "year": 2003,
+                    "youTubeId": "gGdGFtwCNBE"
+                },
+                {
+                    "title": "Somebody That I Used To Know",
+                    "artist": "Gotye ft. Kimbra",
+                    "year": 2011,
+                    "youTubeId": "8UVNT4wvIGY"
+                },
+                {
+                    "title": "Royals",
+                    "artist": "Lorde",
+                    "year": 2013,
+                    "youTubeId": "nlcIKh6sBtc"
+                },
+                {
+                    "title": "Maps",
+                    "artist": "Yeah Yeah Yeahs",
+                    "year": 2003,
+                    "youTubeId": "oIIxlgcuQRU"
+                },
+                {
+                    "title": "Can't Stop",
+                    "artist": "Red Hot Chili Peppers",
+                    "year": 2002,
+                    "youTubeId": "8DyziWtkfBw"
+                }
+            ]
+        },
+        {
+            "_id": "651f0d8d43b7f5e6d4280003",
+            "ownerEmail": "karen@gmail.com",
+            "name": "Interesting Songs",
+            "songs": [
+                {
+                    "title": "Archangel",
+                    "artist": "Burial",
+                    "year": 2007,
+                    "youTubeId": "9hI4bSCy9gk"
+                },
+                {
+                    "title": "Windowlicker",
+                    "artist": "Aphex Twin",
+                    "year": 1999,
+                    "youTubeId": "sCifS7qzJTI"
+                },
+                {
+                    "title": "Genesis",
+                    "artist": "Armors",
+                    "year": 2015,
+                    "youTubeId": "p7J2JxBv7hE"
+                },
+                {
+                    "title": "BYE BYE BABY",
+                    "artist": "TOKiMONSTA ft. Uffie",
+                    "year": 2020,
+                    "youTubeId": "7vXn5-6v9pA"
+                },
+                {
+                    "title": "Avant Gardener",
+                    "artist": "Courtney Barnett",
+                    "year": 2013,
+                    "youTubeId": "i0RZJXg5us4"
+                },
+                {
+                    "title": "Two Weeks",
+                    "artist": "FKA twigs",
+                    "year": 2014,
+                    "youTubeId": "3yDP9MKVhZc"
+                },
+                {
+                    "title": "Seigfried",
+                    "artist": "Frank Ocean",
+                    "year": 2016,
+                    "youTubeId": "vQHVGXdcqEQ"
+                },
+                {
+                    "title": "Everything Is Embarrassing",
+                    "artist": "Sky Ferreira",
+                    "year": 2012,
+                    "youTubeId": "tG6Y6hnK8DU"
+                },
+                {
+                    "title": "Oblivion",
+                    "artist": "Grimes",
+                    "year": 2012,
+                    "youTubeId": "JtH68PJIQLE"
+                },
+                {
+                    "title": "The Rip",
+                    "artist": "Portishead",
+                    "year": 2008,
+                    "youTubeId": "kBO5dh9qrIQ"
+                },
+                {
+                    "title": "Teardrop",
+                    "artist": "Massive Attack",
+                    "year": 1998,
+                    "youTubeId": "u7K72X4eo_s"
+                },
+                {
+                    "title": "Sun",
+                    "artist": "Two Door Cinema Club",
+                    "year": 2012,
+                    "youTubeId": "sWQayQk9OY8"
+                },
+                {
+                    "title": "Knife",
+                    "artist": "Grizzly Bear",
+                    "year": 2006,
+                    "youTubeId": "4I2GkCq4Sfc"
+                },
+                {
+                    "title": "Retrograde",
+                    "artist": "James Blake",
+                    "year": 2013,
+                    "youTubeId": "6p6PcFFUm5I"
+                },
+                {
+                    "title": "New Person, Same Old Mistakes",
+                    "artist": "Tame Impala",
+                    "year": 2015,
+                    "youTubeId": "lgqmwkD9i2I"
+                },
+                {
+                    "title": "Default",
+                    "artist": "Atoms for Peace",
+                    "year": 2012,
+                    "youTubeId": "yZKkYbF9a1Y"
+                },
+                {
+                    "title": "A Real Hero",
+                    "artist": "College & Electric Youth",
+                    "year": 2011,
+                    "youTubeId": "vN4U5FqrOdQ"
+                },
+                {
+                    "title": "First Class",
+                    "artist": "Henry Green",
+                    "year": 2015,
+                    "youTubeId": "9bQF3IuY1aM"
+                },
+                {
+                    "title": "Luna",
+                    "artist": "Smashing Pumpkins",
+                    "year": 1993,
+                    "youTubeId": "zQ2S1-4W2qo"
+                },
+                {
+                    "title": "Space Song",
+                    "artist": "Beach House",
+                    "year": 2015,
+                    "youTubeId": "rb2kMZ1WOPQ"
                 }
             ]
         }

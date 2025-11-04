@@ -10,42 +10,97 @@
     @author McKilla Gorilla
 */
 
-import axios from 'axios'
-axios.defaults.withCredentials = true;
-const api = axios.create({
-    baseURL: 'http://localhost:4000/store',
-})
-
 // THESE ARE ALL THE REQUESTS WE`LL BE MAKING, ALL REQUESTS HAVE A
 // REQUEST METHOD (like get) AND PATH (like /top5list). SOME ALSO
 // REQUIRE AN id SO THAT THE SERVER KNOWS ON WHICH LIST TO DO ITS
 // WORK, AND SOME REQUIRE DATA, WHICH WE WE WILL FORMAT HERE, FOR WHEN
 // WE NEED TO PUT THINGS INTO THE DATABASE OR IF WE HAVE SOME
 // CUSTOM FILTERS FOR QUERIES
-export const createPlaylist = (newListName, newSongs, userEmail) => {
-    return api.post(`/playlist/`, {
-        // SPECIFY THE PAYLOAD
-        name: newListName,
-        songs: newSongs,
-        ownerEmail: userEmail
-    })
+const BASE_URL = 'http://localhost:4000/store';
+
+async function request(path, options = {}) {
+    const { body, headers, ...rest } = options;
+    const config = {
+        method: 'GET',
+        credentials: 'include',
+        ...rest,
+        headers: {
+            Accept: 'application/json',
+            ...(headers || {}),
+        },
+    };
+
+    if (body !== undefined) {
+        config.body = typeof body === 'string' ? body : JSON.stringify(body);
+        if (!config.headers['Content-Type']) {
+            config.headers['Content-Type'] = 'application/json';
+        }
+    }
+
+    const response = await fetch(`${BASE_URL}${path}`, config);
+    const contentType = response.headers.get('content-type') || '';
+    let data = null;
+
+    try {
+        const rawBody = await response.text();
+        if (rawBody) {
+            if (contentType.includes('application/json')) {
+                try {
+                    data = JSON.parse(rawBody);
+                } catch (parseError) {
+                    data = rawBody;
+                }
+            } else {
+                data = rawBody;
+            }
+        }
+    } catch (readError) {
+        data = null;
+    }
+
+    const normalized = {
+        status: response.status,
+        statusText: response.statusText,
+        data,
+    };
+
+    if (!response.ok) {
+        const error = new Error(`Request failed with status ${response.status}`);
+        error.response = normalized;
+        throw error;
+    }
+
+    return normalized;
 }
-export const deletePlaylistById = (id) => api.delete(`/playlist/${id}`)
-export const getPlaylistById = (id) => api.get(`/playlist/${id}`)
-export const getPlaylistPairs = () => api.get(`/playlistpairs/`)
-export const updatePlaylistById = (id, playlist) => {
-    return api.put(`/playlist/${id}`, {
-        // SPECIFY THE PAYLOAD
-        playlist : playlist
+
+export const createPlaylist = (newListName, newSongs, userEmail) => (
+    request(`/playlist/`, {
+        method: 'POST',
+        body: {
+            name: newListName,
+            songs: newSongs,
+            ownerEmail: userEmail,
+        },
     })
-}
+);
+export const deletePlaylistById = (id) => request(`/playlist/${id}`, { method: 'DELETE' });
+export const getPlaylistById = (id) => request(`/playlist/${id}`);
+export const getPlaylistPairs = () => request(`/playlistpairs/`);
+export const updatePlaylistById = (id, playlist) => (
+    request(`/playlist/${id}`, {
+        method: 'PUT',
+        body: {
+            playlist,
+        },
+    })
+);
 
 const apis = {
     createPlaylist,
     deletePlaylistById,
     getPlaylistById,
     getPlaylistPairs,
-    updatePlaylistById
-}
+    updatePlaylistById,
+};
 
-export default apis
+export default apis;

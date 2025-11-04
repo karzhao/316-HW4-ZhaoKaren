@@ -10,11 +10,6 @@
     @author McKilla Gorilla
 */
 
-import axios from 'axios'
-axios.defaults.withCredentials = true;
-const api = axios.create({
-    baseURL: 'http://localhost:4000/auth',
-})
 
 // THESE ARE ALL THE REQUESTS WE`LL BE MAKING, ALL REQUESTS HAVE A
 // REQUEST METHOD (like get) AND PATH (like /register). SOME ALSO
@@ -23,28 +18,92 @@ const api = axios.create({
 // WE NEED TO PUT THINGS INTO THE DATABASE OR IF WE HAVE SOME
 // CUSTOM FILTERS FOR QUERIES
 
-export const getLoggedIn = () => api.get(`/loggedIn/`);
-export const loginUser = (email, password) => {
-    return api.post(`/login/`, {
-        email : email,
-        password : password
-    })
+const BASE_URL = 'http://localhost:4000/auth';
+
+async function request(path, options = {}) {
+    const { body, headers, ...rest } = options;
+    const config = {
+        method: 'GET',
+        credentials: 'include',
+        ...rest,
+        headers: {
+            Accept: 'application/json',
+            ...(headers || {}),
+        },
+    };
+
+    if (body !== undefined) {
+        config.body = typeof body === 'string' ? body : JSON.stringify(body);
+        if (!config.headers['Content-Type']) {
+            config.headers['Content-Type'] = 'application/json';
+        }
+    }
+
+    const response = await fetch(`${BASE_URL}${path}`, config);
+    const contentType = response.headers.get('content-type') || '';
+    let data = null;
+
+    try {
+        const rawBody = await response.text();
+        if (rawBody) {
+            if (contentType.includes('application/json')) {
+                try {
+                    data = JSON.parse(rawBody);
+                } catch (parseError) {
+                    data = rawBody;
+                }
+            } else {
+                data = rawBody;
+            }
+        }
+    } catch (readError) {
+        data = null;
+    }
+
+    const normalized = {
+        status: response.status,
+        statusText: response.statusText,
+        data,
+    };
+
+    if (!response.ok) {
+        const error = new Error(`Request failed with status ${response.status}`);
+        error.response = normalized;
+        throw error;
+    }
+
+    return normalized;
 }
-export const logoutUser = () => api.get(`/logout/`)
-export const registerUser = (firstName, lastName, email, password, passwordVerify) => {
-    return api.post(`/register/`, {
-        firstName : firstName,
-        lastName : lastName,
-        email : email,
-        password : password,
-        passwordVerify : passwordVerify
+
+export const getLoggedIn = () => request(`/loggedIn/`);
+export const loginUser = (email, password) => (
+    request(`/login/`, {
+        method: 'POST',
+        body: {
+            email,
+            password,
+        },
     })
-}
+);
+export const logoutUser = () => request(`/logout/`);
+export const registerUser = (firstName, lastName, email, password, passwordVerify) => (
+    request(`/register/`, {
+        method: 'POST',
+        body: {
+            firstName,
+            lastName,
+            email,
+            password,
+            passwordVerify,
+        },
+    })
+);
+
 const apis = {
     getLoggedIn,
     registerUser,
     loginUser,
-    logoutUser
-}
+    logoutUser,
+};
 
-export default apis
+export default apis;

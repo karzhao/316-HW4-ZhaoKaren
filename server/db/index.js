@@ -1,15 +1,22 @@
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const mongoose = require('mongoose')
-const dotenv = require('dotenv')
-dotenv.config();
+const MongoDatabaseManager = require('./mongodb');
+const PostgreDatabaseManager = require('./postgre');
 
-mongoose
-    .connect(process.env.DB_CONNECT, { useNewUrlParser: true })
-    .catch(e => {
-        console.error('Connection error', e.message)
-    })
+const vendor = (process.env.DB_VENDOR || 'mongodb').toLowerCase();
 
-const db = mongoose.connection
+let manager;
 
-module.exports = db
+switch (vendor) {
+case 'postgres':
+case 'postgresql':
+    manager = new PostgreDatabaseManager();
+    break;
+case 'mongo':
+case 'mongodb':
+default:
+    manager = new MongoDatabaseManager();
+}
 
+module.exports = manager;
